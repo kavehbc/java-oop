@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class UserInput {
 
     public static void main(String[] args) {
+        Terminal.clear();
         Scanner scanner = new Scanner(System.in);
 
         try {
