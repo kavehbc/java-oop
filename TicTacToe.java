@@ -18,6 +18,14 @@ public class TicTacToe {
     }
 
     public static char switchPlayer(char currentPlayer) {
+
+        /*
+         * if (currentPlayer == 'X') {
+         * return 'O';
+         * } else {
+         * return 'X';
+         * }
+         */
         return (currentPlayer == 'X') ? 'O' : 'X';
     }
 
@@ -47,6 +55,7 @@ public class TicTacToe {
                 continue;
             }
             board[row - 1][col - 1] = currentPlayer;
+            // check for win condition can be added here
             currentPlayer = switchPlayer(currentPlayer);
             printBoard(board);
         }
