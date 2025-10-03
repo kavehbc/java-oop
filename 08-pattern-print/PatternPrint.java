@@ -46,6 +46,9 @@ public class PatternPrint {
             case 3:
                 printSquaredNumberPattern();
                 break;
+            case 4:
+                printSpiralNumberPattern();
+                break;
             case 5:
                 System.out.println("Exiting...");
                 break;
@@ -180,6 +183,7 @@ public class PatternPrint {
 
         // populate the matrix in a spiral order
         while (value <= n * n) {
+            
             for (int i = minCol; i <= maxCol; i++) {
                 matrix[minRow][i] = value++;
             }
