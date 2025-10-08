@@ -2,17 +2,18 @@ package S12_bank_account;
 
 public class BankAccount {
 
-    private String accountNumber;
+    private static int lastAccountNumber = 100000;
+    private int accountNumber;
     private double balance;
     private Customer accountHolder;
 
-    public BankAccount(String accountNumber, Customer accountHolder) {
-        this.accountNumber = accountNumber;
+    public BankAccount(Customer accountHolder) {
+        this.accountNumber = lastAccountNumber++;
         this.balance = 0.0;
         this.accountHolder = accountHolder;
     }
 
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
