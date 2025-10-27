@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class ChoiceQuestion extends Question {
     
-    private ArrayList<String> choices;
+    protected ArrayList<String> choices;
 
     public ChoiceQuestion() {
         super(); // calling the constructor of the parent class: public Question()
