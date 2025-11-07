@@ -1,4 +1,4 @@
-package S21_linked_list;
+package S21_data_structures;
 import java.util.HashSet;
 import java.util.TreeSet;
 

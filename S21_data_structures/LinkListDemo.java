@@ -1,4 +1,4 @@
-package S21_linked_list;
+package S21_data_structures;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
