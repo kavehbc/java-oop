@@ -7,12 +7,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class InvestmentFrame extends JFrame{
     
-    private static final int FRAME_WIDTH = 500;
-    private static final int FRAME_HEIGHT = 100;
+    private static final int FRAME_WIDTH = 1000;
+    private static final int FRAME_HEIGHT = 250;
 
     private static final double DEFAULT_RATE = 5;
     private static final double INITIAL_BALANCE = 1000;
@@ -21,6 +23,7 @@ public class InvestmentFrame extends JFrame{
     private JTextField rateField;
     private JButton button;
     private JLabel resultLabel;
+    private JTextArea resultArea;
     private double balance;
 
     public static void main(String[] args) {
@@ -34,6 +37,9 @@ public class InvestmentFrame extends JFrame{
         
         balance = INITIAL_BALANCE;
         resultLabel = new JLabel("Balance: $" + balance);
+        resultArea = new JTextArea(10, 30);
+        resultArea.setText(balance + "\n");
+        resultArea.setEditable(false);
 
         createTextField();
         createButton();
@@ -56,6 +62,8 @@ public class InvestmentFrame extends JFrame{
             balance += interest;
             // updating the JLabel to show the new balance
             resultLabel.setText("Balance: $" + balance);
+            // appending the new balance to the JTextArea
+            resultArea.append(balance + "\n");
         }
     }
 
@@ -71,6 +79,11 @@ public class InvestmentFrame extends JFrame{
         panel.add(rateField);
         panel.add(button);
         panel.add(resultLabel);
+
+        JScrollPane scrollPane = new JScrollPane(resultArea);
+        panel.add(scrollPane);
+        //panel.add(resultArea);
+
         add(panel);
     }
 }
